@@ -1,0 +1,105 @@
+/* Estilos adicionais para corrigir problemas de exibição */
+
+/* Corrigir exibição de imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Melhorar visualização em dispositivos móveis */
+@media (max-width: 576px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Garantir que o botão voltar ao topo seja visível */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1000;
+}
+
+.back-to-top.show {
+  opacity: 1;
+}
+
+/* Estilos para modal de galeria */
+.gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.gallery-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.gallery-modal img {
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+.gallery-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.gallery-modal-caption {
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Indicador de status de conexão */
+.connection-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+.connection-status.online {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #27ae60;
+}
+
+.connection-status.offline {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
